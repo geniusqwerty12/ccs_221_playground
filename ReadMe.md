@@ -11,7 +11,7 @@ For first time, run the following command:
 Use the environment (Activate)
     .venv\Scripts\activate
 
-Download the graphics.py module
-    pip install graphics.py
+Install the needed packages/modules using the command:
+    pip install -r "requirements.txt"
 
 Create a python file called main.py
