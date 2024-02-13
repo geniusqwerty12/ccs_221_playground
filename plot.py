@@ -5,8 +5,8 @@ plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
 # Set the start and end points
-point1 = [0, 0]
-point2 = [1, 6]
+point1 = [0, 10]
+point2 = [7, 0]
 
 # List that will store all of the points
 final_points = [] + [point1]
@@ -16,27 +16,37 @@ x_delta = point2[0] - point1[0]
 y_delta = point2[1] - point1[1]
 
 # Steps, this will determine the number of points to be created
-steps = 25
+steps = 10
 
 # solve for slope
 m = y_delta / x_delta
+# print(m)
 
 for i in range(steps):
     # calculate other values of points
     x_new = 0
     y_new = 0
 
-    if m < 1:
+    if abs(m) < 1:
         # Calculate the steps
-        x_new = final_points[i][0] + 1
-        y_new = final_points[i][1] + m
+        if m > 0 :
+            x_new = final_points[i][0] + 1
+            y_new = final_points[i][1] + m
+        else :
+            x_new = final_points[i][0] - 1
+            y_new = final_points[i][1] - m
+
         final_points += [[x_new, y_new]]
     else:
         # Calculate the steps
-        x_new = final_points[i][0] + 1/m
-        y_new = final_points[i][1] + 1
-        final_points += [[x_new, y_new]]
+        if m > 0 :
+            x_new = final_points[i][0] + 1/m
+            y_new = final_points[i][1] + 1
+        else:
+            x_new = final_points[i][0] - 1/m
+            y_new = final_points[i][1] - 1
 
+        final_points += [[x_new, y_new]]
 
     if x_new == point2[0] or y_new == point2[1]:
         print("End point reached, stopping the loop...")
@@ -45,7 +55,7 @@ for i in range(steps):
 # Finally add the final point
 final_points += [[point2[0], point2[1]]]
 
-# print(final_points)
+print(final_points)
 
 # This separates the x and y values
 # So that it can be plotted on the graph
