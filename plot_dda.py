@@ -5,8 +5,8 @@ plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
 # Set the start and end points
-point1 = [0, 10]
-point2 = [7, 0]
+point1 = [15, 18]
+point2 = [30, 26]
 
 # List that will store all of the points
 final_points = [] + [point1]
@@ -16,7 +16,7 @@ x_delta = point2[0] - point1[0]
 y_delta = point2[1] - point1[1]
 
 # Steps, this will determine the number of points to be created
-steps = 10
+steps = 20
 
 # solve for slope
 m = y_delta / x_delta
