@@ -1,0 +1,45 @@
+func bla_draw(p1, p2)
+
+	p1: start point
+	p2: end point
+	point_list: contains the points to be drawn
+	Add p1 to point_list
+
+	Solve for constants
+	Δx: difference of x coordinates of p2 and p1
+	Δy: difference of y coordinates of p2 and p1
+	slope: slope of 2 points
+	d_2x: Δx * 2
+	d_2y: Δy *2
+
+	Calculate p decision parameter value
+	if |slope| < 1
+		p = 2Δy - Δx
+	else
+		p = 2Δx - Δy
+	
+	for each count in Δx
+		newX: x coordinate of next point
+		newY: y coordinate of next point
+		curX: x coordinate of current point
+		curY: y coordinate of current point
+
+		if p < 0
+			if |m| < 1
+				newX = curX + 1
+				newY = currY
+				New p = p + 2Δy
+			else
+				newX = curX
+				newY = currY + 1
+				New p = p + 2Δx
+		else 
+			newX = curX + 1
+			newY = curY + 1
+
+			if |m| < 1
+				New p = p + 2Δy - 2Δx
+			else 
+				New p = p + 2Δx - 2Δy
+			
+		add new point coordinates newX and newY to point_list
