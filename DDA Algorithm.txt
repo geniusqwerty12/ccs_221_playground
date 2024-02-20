@@ -1,0 +1,35 @@
+func dda_draw(p1, p2)
+
+    p1: start point
+    p2: end point
+    point_list: contains the points to be drawn
+    Add p1 to point_list
+
+    slope: slope of p2 and p1
+
+    stopper: false
+
+    while stopper is still false
+        newX: x coordinate of the next point
+        newY: y coordinate of the next point
+
+        curX: x coordinate of the current point
+        curY: y coordinate of the current point
+
+        if absolute value of slope < 1
+            newY = curY + slope
+            if m is positive
+                newX = curX + 1
+            else 
+                newX = curX - 1
+        else 
+            newX = curX + ( 1 / slope )
+            if m is positive
+                newY = curY + 1
+            else 
+                newY = curY - 1
+
+        add new point coordinatex newX and newY to point_list
+
+        if new point (x,y) matches endpoint
+            set stopper to true
