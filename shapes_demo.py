@@ -38,7 +38,7 @@ def main():
                 if event.key == pygame.K_w:
                     glScalef(1.1,1.1,0.0)
                 if event.key == pygame.K_e:
-                    glRotate(50, 0, 0, 1)
+                    glRotate(10, 0, 0, 1)
                 if event.key == pygame.K_r:
                     gluProject(0.5, 0, 0)
 
